@@ -1,0 +1,52 @@
+# Configure shell
+export VISUAL="vim"
+
+# Load zplug
+source ~/.zplug/init.zsh
+
+# Self-managing zplug
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+# Load oh-my-zsh plugins
+zplug "lib/compfix", from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
+zplug "lib/directories", from:oh-my-zsh
+zplug "lib/functions", from:oh-my-zsh
+zplug "lib/history", from:oh-my-zsh
+zplug "lib/key-bindings", from:oh-my-zsh
+zplug "lib/misc", from:oh-my-zsh
+zplug "plugins/wd", from:oh-my-zsh
+zplug "plugins/pyenv", from:oh-my-zsh
+zplug "plugins/gitfast", from:oh-my-zsh
+
+# Load theme
+zplug mafredri/zsh-async, from:github
+zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
+
+# Configure theme
+export SPACESHIP_TIME_SHOW=true
+export SPACESHIP_EXIT_CODE_SHOW=true
+export SPACESHIP_GCLOUD_SHOW=false
+
+# Configure pyenv warning
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+# Add aliases
+alias g=git
+alias vim=nvim
+
+# Install and load
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
+
+# Load fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Configure default `less` options
+export LESS="-SRXF"
