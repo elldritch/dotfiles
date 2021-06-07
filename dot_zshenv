@@ -1,0 +1,44 @@
+# NOTE: this must be bash-compatible so `~/.profile` can `source` this to set
+# the environment variables for `xmonad`: see `~/.profile`
+
+# Snap binaries
+export PATH="/var/lib/snapd/snap/bin:$PATH"
+
+# Stack-built binaries
+export PATH="$HOME/.local/bin:$PATH"
+
+# Yarn binaries
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# Rust binaries
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Golang binaries
+export GOPATH="$HOME/src/gopath"
+export PATH="$GOPATH/bin:$PATH"
+
+# asdf
+# source "$HOME/.asdf/asdf.sh"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+# Slow: see https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load.html#its-probably-nvm
+# TODO: load this asynchronously?
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# nix
+# source "$HOME/.nix-profile/etc/profile.d/nix.sh"
+
+# ghcup
+export PATH="$HOME/.ghcup/bin:$HOME/.cabal/bin:$PATH"
+
+# SDKman
+export SDKMAN_DIR="/home/leo/.sdkman"
+[[ -s "/home/leo/.sdkman/bin/sdkman-init.sh" ]] && source "/home/leo/.sdkman/bin/sdkman-init.sh"
+
+# Lua
+eval "$(luarocks path)"
+
+# Custom binaries
+export PATH="$HOME/bin/local:$HOME/bin/opt:$PATH"
+

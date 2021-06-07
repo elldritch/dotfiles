@@ -1,0 +1,5 @@
+# This sets environment variables for `lightdm` (and thus `xmonad` and `yeganesh`) so that the
+# launcher picks up e.g. `elm-make` (for `atom`'s linter)
+
+source ~/.zshenv
+
