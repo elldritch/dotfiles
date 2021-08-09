@@ -19,4 +19,4 @@ executable xmobar
   build-depends:
     , base    ^>=4.14
     , relude  ==1.0.0.1
-    , xmobar  ==0.38
+    , xmobar  ==0.39

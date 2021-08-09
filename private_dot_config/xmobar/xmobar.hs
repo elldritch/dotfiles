@@ -9,7 +9,7 @@ hasBattery = undefined
 
 hasWirelessInterface :: IO Bool
 hasWirelessInterface = undefined
--- Check .../sys/class/net? `ip route`?
+-- Check .../sys/class/net? `ip route`? `iw dev`?
 -- Tower has a wifi card... maybe I should look for "wifi + no ethernet"?
 
 main :: IO ()
