@@ -17,6 +17,6 @@ executable xmobar
 
   main-is:            xmobar.hs
   build-depends:
-    , base    ^>=4.13
-    , relude  ==0.7.0.0
-    , xmobar  ==0.33
+    , base    ^>=4.14
+    , relude  ==1.0.0.1
+    , xmobar  ==0.38
