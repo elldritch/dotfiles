@@ -37,7 +37,7 @@ export SDKMAN_DIR="/home/leo/.sdkman"
 [[ -s "/home/leo/.sdkman/bin/sdkman-init.sh" ]] && source "/home/leo/.sdkman/bin/sdkman-init.sh"
 
 # Lua
-eval "$(luarocks path)"
+which luarocks > /dev/null && eval "$(luarocks path)"
 
 # Custom binaries
 export PATH="$HOME/bin/local:$HOME/bin/opt:$PATH"
