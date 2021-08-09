@@ -17,6 +17,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH="$HOME/src/gopath"
 export PATH="$GOPATH/bin:$PATH"
 
+# Ruby binaries
+export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
+
 # asdf
 # source "$HOME/.asdf/asdf.sh"
 
