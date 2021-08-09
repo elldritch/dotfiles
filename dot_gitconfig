@@ -1,0 +1,40 @@
+[alias]
+	s = status
+	c = commit
+	a = add
+	d = diff
+	ds = diff --stat
+	dh = diff HEAD
+	dhs = diff HEAD --stat
+	dhh = diff HEAD^
+	dhhs = diff HEAD^ --stat
+	l = log
+	ll = log --stat
+	o = checkout
+	b = branch
+	m = merge
+	i = init
+	r = reset
+	rh = reset HEAD
+	rr = reset HEAD^
+	v = revert
+	t = tag
+[user]
+	email = leo@leozhang.me
+	name = Leo Zhang
+	signingkey = A6B5F0837C2C72C5
+[core]
+	excludesfile = /home/leo/.gitignore_global
+	editor = nvim
+[commit]
+	gpgsign = true
+[credential "https://source.developers.google.com"]
+	helper = gcloud.sh
+[credential]
+	helper = store
+[color]
+	ui = auto
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
