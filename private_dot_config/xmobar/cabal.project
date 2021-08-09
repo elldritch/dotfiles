@@ -1,3 +1,3 @@
 packages: .
 
-constraints: xmobar +with_xft +with_utf8 +with_alsa
+constraints: xmobar +with_xft +with_utf8 +with_alsa +with_nl80211
