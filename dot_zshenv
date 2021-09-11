@@ -25,9 +25,7 @@ export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-# Slow: see https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load.html#its-probably-nvm
-# TODO: load this asynchronously?
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use
 
 # nix
 # source "$HOME/.nix-profile/etc/profile.d/nix.sh"
@@ -41,6 +39,9 @@ export SDKMAN_DIR="/home/leo/.sdkman"
 
 # Lua
 which luarocks > /dev/null && eval "$(luarocks path)"
+
+# Emacs
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 # Custom binaries
 export PATH="$HOME/bin/local:$HOME/bin/opt:$PATH"
