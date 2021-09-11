@@ -42,4 +42,7 @@ zplug load
 # Configure default `less` options
 export LESS="-SRXF"
 
+# direnv
+eval "$(direnv hook zsh)"
+
 eval "$(starship init zsh)"
