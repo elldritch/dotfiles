@@ -19,22 +19,26 @@
 	rr = reset HEAD^
 	v = revert
 	t = tag
-[user]
-	email = leo@leozhang.me
-	name = Leo Zhang
-	signingkey = {{ .git.commit_signing_key }}
 [core]
-	excludesfile = /home/leo/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = nvim
-[commit]
-	gpgsign = true
-[credential "https://source.developers.google.com"]
-	helper = gcloud.sh
+[init]
+	defaultBranch = main
 [credential]
 	helper = store
+[credential "https://source.developers.google.com"]
+	helper = gcloud.sh
 [color]
 	ui = auto
 [pull]
 	rebase = false
-[init]
-	defaultBranch = main
+
+[user]
+	email = leo@leozhang.me
+	name = Leo Zhang
+	signingkey = {{ .git.commit_signing_key }}
+[commit]
+	gpgsign = true
+
+{{ range $inc := .git.conditional_includes }}[includeIf "gitdir:{{ $inc.gitdir }}"]
+	path = {{ $inc.include_path }}{{ end }}
