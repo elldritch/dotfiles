@@ -32,13 +32,9 @@
 	ui = auto
 [pull]
 	rebase = false
-
-[user]
-	email = leo@leozhang.me
-	name = Leo Zhang
-	signingkey = {{ .git.commit_signing_key }}
 [commit]
 	gpgsign = true
 
 {{ range $inc := .git.conditional_includes }}[includeIf "gitdir:{{ $inc.gitdir }}"]
-	path = {{ $inc.include_path }}{{ end }}
+	path = {{ $inc.include_path }}
+{{ end }}
