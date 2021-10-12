@@ -1,11 +1,12 @@
 module Main (main) where
 
 import Relude
-import System.Directory (doesFileExist)
+import System.Directory (doesFileExist, findExecutable)
+import System.Process (readProcess)
 import Xmobar
 
-hasBattery :: IO Bool
-hasBattery = getAny . mconcat <$> mapM isBattery batteryIDs
+showBattery :: IO Bool
+showBattery = getAny . mconcat <$> mapM isBattery batteryIDs
  where
   batteryIDs = ["BAT", "BAT0", "BAT1", "BAT2"]
   isBattery batteryID = do
@@ -16,15 +17,64 @@ hasBattery = getAny . mconcat <$> mapM isBattery batteryIDs
         then (== "Battery") <$> readFile "/sys/class/power_supply/BAT0/type"
         else pure False
 
--- Check .../sys/class/net? `ip route`? `iw dev`?
--- Tower has a wifi card... maybe I should look for "wifi + no ethernet"?
-hasWirelessInterface :: IO Bool
-hasWirelessInterface = undefined
+-- Show if:
+--
+-- 1. WiFi is connected.
+-- 2. WiFi is disconnected and there's no ethernet connection.
+--
+-- ----
+--
+-- TODO: How do I get the wireless indicator to show up _dynamically_? What if
+-- I change connections? I need the wireless indicator to change as my network
+-- status changes.
+--
+-- Maybe I need to make a proper `Monitor`? I basically want a combination of
+-- `DynNetwork` and `Wireless`.
+--
+-- ----
+--
+-- TODO: Notes on a more portable implementation:
+--
+-- Checking whether WiFi is connected:
+--
+-- 1. Check `/sys/class/net` for device with `/wireless`.
+-- 2. Run `iw dev DEVICE link`, check whether output is "Not connected."
+--
+-- Checking whether ethernet is connected:
+--
+-- 1. TODO: How do I get a list of ethernet devices?
+-- 2. `cat /sys/class/net/DEVICE/operstate` == `up`.
+showWirelessInterface :: IO Bool
+showWirelessInterface = do
+  hasNMCLI <- findExecutable "nmcli"
+  case hasNMCLI of
+    Just nmcli -> do
+      out <- readProcess nmcli ["device", "status"] ""
+      let lexed = words <$> lines (toText out)
+      let eth = connectedEthernet lexed
+      let wifi = connectedWiFi lexed
+      pure $ case wifi of
+        Just _ -> True
+        Nothing -> case eth of
+          Just _ -> False
+          Nothing -> True
+    Nothing -> pure True
+ where
+  connectedEthernet :: [[Text]] -> Maybe Text
+  connectedEthernet lexed = asum $ line <$> lexed
+   where
+    line [_, "ethernet", "connected", connection] = Just connection
+    line _ = Nothing
 
+  connectedWiFi :: [[Text]] -> Maybe Text
+  connectedWiFi lexed = asum $ line <$> lexed
+   where
+    line [_, "wifi", "connected", connection] = Just connection
+    line _ = Nothing
 
 main :: IO ()
 main = do
-  batteryPowered <- hasBattery
+  batteryPowered <- showBattery
   xmobar $
     defaultConfig
       { font = "xft:monospace"
@@ -57,6 +107,8 @@ main = do
                 , "yellow"
                 , "--high"
                 , "green"
+                , "-x"
+                , "-"
                 ]
                 10
           , Run $ Date "%k:%M %a %m/%d/%y" "datetime" 10
