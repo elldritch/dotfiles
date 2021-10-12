@@ -1,0 +1,2 @@
+export GH_CONFIG_DIR=$(expand_path .config/gh)
+export GIT_SSH_COMMAND="ssh -i $(expand_path .config/ssh/id_rsa)"

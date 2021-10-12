@@ -1,0 +1,4 @@
+github.com:
+    oauth_token: {{ .gh.token }}
+    user: {{ .gh.user }}
+    git_protocol: ssh
