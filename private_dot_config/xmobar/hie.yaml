@@ -1,4 +1,0 @@
-cradle:
-  cabal:
-    - path: "./xmobar.hs"
-      component: "xmobar-custom:exe:xmobar"

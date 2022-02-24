@@ -1,8 +1,10 @@
 module Main (main) where
 
 import Relude
+
 import System.Directory (doesFileExist, findExecutable)
 import System.Process (readProcess)
+
 import Xmobar
 
 showBattery :: IO Bool

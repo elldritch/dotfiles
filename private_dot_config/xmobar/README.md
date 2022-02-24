@@ -1,1 +1,0 @@
-Clone into `.config/xmobar`
