@@ -212,7 +212,8 @@ keybindings =
     withMask xK_Print "maim -s ~/screenshots/$(date +%s).png",
     -- Remap reload => mask-r and physical screens to mask-{q,w,e}
     withMask' xK_r $ do
-      ok <- recompile False
+      dirs <- liftIO getDirectories
+      ok <- recompile dirs False
       if ok then restart "xmonad" True else spawn "xmessage recompile failed",
     withSMask' xK_r $ io exitSuccess,
     -- Clipboard manager
