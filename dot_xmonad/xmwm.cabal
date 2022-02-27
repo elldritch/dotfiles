@@ -90,9 +90,11 @@ library
     XMWM.XMobar
 
   build-depends:
+    , megaparsec      ^>=9.2.0
+    , X11             ^>=1.10.2
     , xmonad          ^>=0.17
     , xmonad-contrib  ^>=0.17
-    , X11             ^>=1.10.2
+    , mtl ^>=2.2.2
 
 test-suite tests
   import:             lang
@@ -102,20 +104,27 @@ test-suite tests
 
   -- cabal-fmt: expand test -Main
   other-modules:
+    Sound.Pulse.PACtl.CardSpec
+    Sound.Pulse.PACtl.SinkSpec
+    Sound.Pulse.PACtl.SourceSpec
+
   build-tool-depends: hspec-discover:hspec-discover ^>=2.9.4
-  build-depends:      hspec ^>=2.9.4
+  build-depends:
+    , hspec           ^>=2.9.4
+    , raw-strings-qq  ^>=1.1
+    , xmwm
 
 executable xmonad
   import:         lang
   hs-source-dirs: cmd/xmonad
   main-is:        Main.hs
   build-depends:
-    , xmwm
     , containers      ^>=0.6.4.1
     , extra           ^>=1.7.9
     , X11             ^>=1.10.2
     , xmonad          ^>=0.17
     , xmonad-contrib  ^>=0.17
+    , xmwm
 
 executable xmobar
   import:         lang
