@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 9d63f7817d148ece756f4396a5994ca7d09be4e8 Leo Zhang <leo@leozhang.me> 1646025983 -0800	commit (initial): Initial commit
+9d63f7817d148ece756f4396a5994ca7d09be4e8 e34167c02247995aeb8c4b2a82e147bd290f92ed Leo Zhang <leo@leozhang.me> 1646029282 -0800	commit: Refactor keybindings
+e34167c02247995aeb8c4b2a82e147bd290f92ed 4b17d8523db0bf15562859e57371695cb3b9db14 Leo Zhang <leo@leozhang.me> 1646031938 -0800	commit: feat: Add default sink selection
+4b17d8523db0bf15562859e57371695cb3b9db14 b7f0e91118b3381fede331471cdf7fa984d09368 Leo Zhang <leo@leozhang.me> 1646033092 -0800	commit: refactor: Add dmenu' for picking renderable values
+b7f0e91118b3381fede331471cdf7fa984d09368 8767ac07031cbd7e43a4e21a7796f70711589e74 Leo Zhang <leo@leozhang.me> 1646034847 -0800	commit: feat: Add sink card profile selection
+8767ac07031cbd7e43a4e21a7796f70711589e74 097a5a6de046818cd8ba80eda0d9b8a784d39b15 Leo Zhang <leo@leozhang.me> 1646035717 -0800	commit: feat: Add default source card selection
+097a5a6de046818cd8ba80eda0d9b8a784d39b15 ec67081100cb2703ca536ad329176a6183dc20aa Leo Zhang <leo@leozhang.me> 1646035885 -0800	commit: chore: Run formatter
+ec67081100cb2703ca536ad329176a6183dc20aa c6829ae67737900b16f0927176435afe04b5be88 Leo Zhang <leo@leozhang.me> 1646036038 -0800	commit: feat: Align audio device hotkeys with xmobar indicators
+c6829ae67737900b16f0927176435afe04b5be88 4f6b716a043ec5989e4aaf064204483f77788aba Leo Zhang <leo@leozhang.me> 1646037495 -0800	commit: feat: Add default source selection

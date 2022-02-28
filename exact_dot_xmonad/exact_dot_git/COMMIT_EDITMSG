@@ -1,0 +1,18 @@
+feat: Add default source selection
+
+- refactor: Remove xmdev
+- refactor: Sinks and Sources are now Devices
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Changes to be committed:
+#	deleted:    cmd/xmdev/Main.hs
+#	new file:   src/Sound/Pulse/DBus/Device.hs
+#	modified:   src/Sound/Pulse/DBus/Interfaces.hs
+#	modified:   src/Sound/Pulse/DBus/Internal.hs
+#	deleted:    src/Sound/Pulse/DBus/Sink.hs
+#	deleted:    src/Sound/Pulse/DBus/Source.hs
+#	modified:   src/XMWM/Keybindings.hs
+#	modified:   xmwm.cabal
+#

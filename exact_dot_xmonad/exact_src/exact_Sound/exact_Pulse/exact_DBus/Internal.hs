@@ -1,12 +1,13 @@
 module Sound.Pulse.DBus.Internal (
   fromVariant',
   fromVariantMap,
+  fromVariantMap',
   fromPropList,
+  call,
   getProperty,
   getPropertyBus,
   getAllProperties,
   setProperty,
-  call,
 ) where
 
 import Relude
@@ -30,9 +31,11 @@ import Data.Text (dropEnd)
 
 import Sound.Pulse.DBus (PulseAudioT)
 
+-- | Unwrap a Variant value.
 fromVariant' :: IsVariant a => Variant -> Either String a
 fromVariant' = maybeToRight "fromVariant': bad cast" . fromVariant
 
+-- | Get a value from a Variant dictionary.
 fromVariantMap :: (Monad m, Ord k, Show k, IsVariant v) => k -> Map k Variant -> PulseAudioT m v
 fromVariantMap k m =
   liftEither $
@@ -40,6 +43,13 @@ fromVariantMap k m =
       =<< maybeToRight
         ("fromVariantMap: no key " <> show k)
         (Map.lookup k m)
+
+-- | Get a possibly missing value from a Variant dictionary.
+fromVariantMap' :: (Monad m, Ord k, Show k, IsVariant v) => k -> Map k Variant -> PulseAudioT m (Maybe v)
+fromVariantMap' k m = do
+  case Map.lookup k m of
+    Just v -> Just <$> liftEither (fromVariant' v)
+    Nothing -> pure Nothing
 
 -- | Get a value from a PulseAudio property list.
 --

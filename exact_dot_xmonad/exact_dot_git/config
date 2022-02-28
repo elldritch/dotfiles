@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[user]
+	name = Leo Zhang
+	email = leo@leozhang.me
+	signingkey = A6B5F0837C2C72C5
