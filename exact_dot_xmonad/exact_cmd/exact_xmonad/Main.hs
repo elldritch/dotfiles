@@ -89,6 +89,17 @@ keybindings =
     , withMask xK_F12 "amixer sset Master 1%+"
     , -- Microphone control with function keys
       withMask xK_F9 "amixer sset Capture toggle"
+
+    -- TODO:
+    -- F9: toggle microphone mute
+    -- F10: toggle volume mute
+    -- S+F9: pick default source
+    -- S+F10: pick default sink
+    -- F11: volume down
+    -- F12: volume up
+    -- S+F11: set default source card profile
+    -- S+F12: set default sink card profile
+
     , -- Select audio output with dmenu (TODO: refactor action?)
       withSMask' xK_F10 $ do
         sinks <- getSinks

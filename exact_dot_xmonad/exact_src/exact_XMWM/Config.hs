@@ -1,6 +1,7 @@
 {-# LANGUAGE PartialTypeSignatures #-}
 {-# OPTIONS_GHC -fno-warn-partial-type-signatures #-}
 
+-- | The XMonad configuration.
 module XMWM.Config (xConf) where
 
 import Relude
@@ -16,7 +17,7 @@ import XMWM.Keybindings (superMask)
 import XMWM.Workspaces (defaultWorkspaces)
 import XMWM.XMobar (logWindowsToXMobar)
 
--- The customized XMonad configuration to use.
+-- | The customized XMonad configuration to use.
 xConf :: Handle -> XConfig _
 xConf outputHandle =
   def

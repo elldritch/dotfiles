@@ -1,3 +1,4 @@
+-- | Utilities for workspaces and user input for workspaces.
 module XMWM.Workspaces (defaultWorkspaces, workspaceFromDmenu) where
 
 import Relude
@@ -18,15 +19,15 @@ import XMonad.Core (WorkspaceId, X, withWindowSet)
 import XMonad.StackSet (Workspace (tag), workspaces)
 import XMonad.Util.Dmenu (dmenu)
 
--- A static list of default workspaces to choose from. This is every key across
--- the top row, from tilde to backspace.
+-- | A static list of default workspaces to choose from. This is every key
+-- across the top row, from tilde to backspace.
 defaultWorkspaces :: [(KeySym, WorkspaceId)]
 defaultWorkspaces =
   zip
     ([xK_grave] ++ [xK_1 .. xK_9] ++ [xK_0, xK_minus, xK_equal, xK_BackSpace])
     ((["~"] ++ fmap show [1 .. 9 :: Int]) ++ ["0", "-", "=", "B"])
 
--- Prompt the user with dmenu to choose from a list of existing workspaces.
+-- | Prompt the user with @dmenu@ to choose from a list of existing workspaces.
 -- Users can also enter a new workspace ID (which is just a string). Returns
 -- Nothing if the user exited the prompt without selection.
 workspaceFromDmenu :: X (Maybe WorkspaceId)

@@ -1,3 +1,4 @@
+-- | Utilities for working with XMobar.
 module XMWM.XMobar (logWindowsToXMobar) where
 
 import Relude
@@ -9,7 +10,7 @@ import XMonad.Util.Loggers (Logger)
 import XMonad.Util.NamedWindows (getName, unName)
 import XMonad.Util.Run (hPutStrLn)
 
--- A log hook. Given the handle for XMobar, this pretty-prints the output that
+-- | A log hook. Given the handle for XMobar, this pretty-prints the output that
 -- XMobar expects for workspace and window display.
 logWindowsToXMobar :: Handle -> X ()
 logWindowsToXMobar xmobarHandle =

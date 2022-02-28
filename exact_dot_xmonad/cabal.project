@@ -15,8 +15,5 @@ index-state:  hackage.haskell.org 2022-01-31T21:08:03Z
 
 constraints: xmobar +with_xft +with_utf8 +with_alsa +with_nl80211
 
-package xmwm
-  haddock-options: --ignore-all-exports
-
 package *
   documentation: True
