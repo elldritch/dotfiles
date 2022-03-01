@@ -7,3 +7,5 @@ b7f0e91118b3381fede331471cdf7fa984d09368 8767ac07031cbd7e43a4e21a7796f70711589e7
 097a5a6de046818cd8ba80eda0d9b8a784d39b15 ec67081100cb2703ca536ad329176a6183dc20aa Leo Zhang <leo@leozhang.me> 1646035885 -0800	commit: chore: Run formatter
 ec67081100cb2703ca536ad329176a6183dc20aa c6829ae67737900b16f0927176435afe04b5be88 Leo Zhang <leo@leozhang.me> 1646036038 -0800	commit: feat: Align audio device hotkeys with xmobar indicators
 c6829ae67737900b16f0927176435afe04b5be88 4f6b716a043ec5989e4aaf064204483f77788aba Leo Zhang <leo@leozhang.me> 1646037495 -0800	commit: feat: Add default source selection
+4f6b716a043ec5989e4aaf064204483f77788aba 3afc2227e97b22de4e10eefee143d894b16a7138 Leo Zhang <leo@leozhang.me> 1646072271 -0800	commit: refactor: Clean up duplicate and unused code
+3afc2227e97b22de4e10eefee143d894b16a7138 0cbf4050b6899c6a33e1b590cc9baefa87dd073e Leo Zhang <leo@leozhang.me> 1646120613 -0800	commit: refactor: Update xmobar
