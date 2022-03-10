@@ -17,8 +17,10 @@
 .fail
 
 ### Automatically restore the volume of streams and devices
+### NOTE: I turn off module-stream-restore since I want streams to always route
+### to the current default device that I've selected.
 load-module module-device-restore
-load-module module-stream-restore
+# load-module module-stream-restore
 load-module module-card-restore
 
 ### Automatically augment property information from .desktop files
@@ -113,7 +115,9 @@ load-module module-role-cork
 load-module module-filter-heuristics
 load-module module-filter-apply
 
-### NOTE: These are my default device and card profile selections.
+### NOTE: These are my default device and card profile selections. I use .nofail
+### in case some devices are not available at startup.
+.nofail
 set-card-profile alsa_card.pci-0000_01_00.1 output:hdmi-stereo-extra2
 set-card-profile alsa_card.usb-046d_HD_Pro_Webcam_C920_0F9C44AF-02 off
 set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo
