@@ -1,3 +1,5 @@
 xmonad.errors
 dist-newstyle/
 dist-newstyle/**
+.git
+.git/**
