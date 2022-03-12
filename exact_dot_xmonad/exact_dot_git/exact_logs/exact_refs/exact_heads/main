@@ -9,3 +9,4 @@ ec67081100cb2703ca536ad329176a6183dc20aa c6829ae67737900b16f0927176435afe04b5be8
 c6829ae67737900b16f0927176435afe04b5be88 4f6b716a043ec5989e4aaf064204483f77788aba Leo Zhang <leo@leozhang.me> 1646037495 -0800	commit: feat: Add default source selection
 4f6b716a043ec5989e4aaf064204483f77788aba 3afc2227e97b22de4e10eefee143d894b16a7138 Leo Zhang <leo@leozhang.me> 1646072271 -0800	commit: refactor: Clean up duplicate and unused code
 3afc2227e97b22de4e10eefee143d894b16a7138 0cbf4050b6899c6a33e1b590cc9baefa87dd073e Leo Zhang <leo@leozhang.me> 1646120613 -0800	commit: refactor: Update xmobar
+0cbf4050b6899c6a33e1b590cc9baefa87dd073e a1c870234aafae506e0001fa38166538c8cccef8 Leo Zhang <leo@leozhang.me> 1647065475 -0800	commit: refactor: Factor out spawning keybindings
