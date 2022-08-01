@@ -19,6 +19,8 @@
 	rr = reset HEAD^
 	v = revert
 	t = tag
+	p = push --set-upstream
+	h = rev-parse HEAD
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = nvim
@@ -30,6 +32,8 @@
 	helper = gcloud.sh
 [color]
 	ui = auto
+[push]
+	default = current
 [pull]
 	rebase = false
 [commit]
