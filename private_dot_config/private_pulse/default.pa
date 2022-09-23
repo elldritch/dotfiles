@@ -119,7 +119,7 @@ load-module module-filter-apply
 ### in case some devices are not available at startup.
 .nofail
 #### HDMI audio output
-set-card-profile alsa_card.pci-0000_01_00.1 output:hdmi-stereo-extra2
+set-card-profile alsa_card.pci-0000_01_00.1 output:hdmi-stereo
 #### USB webcam microphone
 set-card-profile alsa_card.usb-046d_HD_Pro_Webcam_C920_0F9C44AF-02 off
 #### AUX audio card
