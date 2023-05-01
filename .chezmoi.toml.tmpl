@@ -1,0 +1,22 @@
+# Configure git conditional includes, for namespacing git configurations to
+# repository location.
+#
+# Used in:
+# - .gitconfig
+#
+# See also: https://git-scm.com/docs/git-config#_conditional_includes
+[[data.git.conditional_includes]]
+gitdir = "~/src/personal/"
+include_path = "~/src/personal/.config/git/gitconfig.inc"
+
+# Configure audio devices on startup. All fields are optional.
+#
+# Used in:
+# - .config/pulse/default.pa
+#
+# See also: https://man.archlinux.org/man/extra/pulseaudio/default.pa.5.en
+[data.pulseaudio]
+## Each card in the list should be `{ card: string, profile: string }`.
+card_profiles = []
+default_sink = ""
+default_source = ""
