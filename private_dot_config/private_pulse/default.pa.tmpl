@@ -122,5 +122,9 @@ load-module module-filter-apply
 set-card-profile {{ .card }} {{ .profile }}
 {{- end }}
 
+{{- if ne .pulseaudio.default_sink "" }}
 set-default-sink {{ .pulseaudio.default_sink }}
+{{- end }}
+{{- if ne .pulseaudio.default_source "" }}
 set-default-source {{ .pulseaudio.default_source }}
+{{- end }}
